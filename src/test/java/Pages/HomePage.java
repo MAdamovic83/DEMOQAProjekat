@@ -14,6 +14,7 @@ public class HomePage {
        this.driver = driver;
 
    }
+   //metoda za pristup listi svih elemenata na pocetnoj stranici
    public List<WebElement> getCards(){
        return driver.findElements(By.cssSelector(".card.mt-4.top-card"));
 
@@ -21,7 +22,7 @@ public class HomePage {
 
    //---------------
 
-
+    // u delu ispod su for petlje za odabir svakog od elemenata
    public void clickOnElements(){
        for(int i = 0; i<getCards().size();i++){
            if(getCards().get(i).getText().equals("Elements")){

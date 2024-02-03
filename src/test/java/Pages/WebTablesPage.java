@@ -39,10 +39,12 @@ public class WebTablesPage {
         return driver.findElement(By.id("submit"));
     }
 
+    // metoda za pristup svim celijama u tabeli
     public List<WebElement> getTableCells(){
         return driver.findElements(By.className("rt-td"));
     }
 
+    // //metoda kojom se pristupa jednom elementu preko teksta koji prosledjujem
     public WebElement getTableCell(String text){
         for (int i = 0; i< getTableCells().size(); i++) {
             if (getTableCells().get(i).getText().equals(text)) {

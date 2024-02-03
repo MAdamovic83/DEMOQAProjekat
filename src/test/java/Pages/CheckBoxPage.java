@@ -30,10 +30,12 @@ public class CheckBoxPage{
         return driver.findElement(By.cssSelector(".rct-icon.rct-icon-collapse-all"));
     }
 
+    //metoda za prisup listi svih toggle elemenata
     public List<WebElement> getCheckBoxes(){
         return driver.findElements(By.className("rct-title"));
     }
 
+    //metoda za pristup jednom konkretnom check boxu sa nazivom koji prosledjujem
     public WebElement getCheckBox(String label){
         for (int i = 0; i< getCheckBoxes().size(); i++) {
             if (getCheckBoxes().get(i).getText().equals(label)) {
@@ -43,10 +45,12 @@ public class CheckBoxPage{
         return null;
     }
 
+    //metoda kojom se pristupa listi rezultata
     public List<WebElement> getResults(){
         return driver.findElements(By.className("text-success"));
     }
 
+    // metoda za pristup jednom rezultatu
     public WebElement getResult(String label){
         for (int i = 0; i< getResults().size(); i++) {
             if (getResults().get(i).getText().equals(label)) {
@@ -55,17 +59,6 @@ public class CheckBoxPage{
         }
         return null;
     }
-
-    //------------------
-
-
-
-//    public WebElement getToggleButton() {
-//        return driver.findElement(By.cssSelector(".rct-collapse.rct-collapse-btn"));
-//    }
-//    public List<WebElement> getToggleListButtons() {
-//        return driver.findElements(By.cssSelector(".rct-collapse.rct-collapse-btn"));
-//    }
 
     public WebElement getPageText() {
         return driver.findElement(By.id("result"));
@@ -85,6 +78,7 @@ public class CheckBoxPage{
         getCollapseAllButton().click();
     }
 
+    // metoda za klik na element
     public void clickOnCheckBox(String label){
         for (int i = 0; i< getCheckBoxes().size(); i++) {
             if (getCheckBoxes().get(i).getText().equals(label)) {
@@ -95,12 +89,6 @@ public class CheckBoxPage{
         }
     }
 
-//    public void clickOnToggleListButtons(){
-//        for(int i = 0;i < getToggleListButtons().size();i++){
-//            getToggleListButtons().get(i).click();
-//            break;
-//        }
-//    }
     public void clickPageText(){
         getPageText().click();
     }

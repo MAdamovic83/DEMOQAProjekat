@@ -28,6 +28,7 @@ public class RadioButtonPage {
         return driver.findElements(By.className("text-success"));
     }
 
+    //metoda kojom se pristupa listi rezultata
     public WebElement getResult(String label){
         for (int i = 0; i< getResults().size(); i++) {
             if (getResults().get(i).getText().equals(label)) {
